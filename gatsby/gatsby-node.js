@@ -47,10 +47,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         });
       });
 
-      console.log(`num pages`, pages.length);
-      console.log(pages.slice(0, 2));
-      console.log(pages.filter(page => !page.path));
-      resolve(pages);
+      // We're done.
+      resolve();
     });
   });
 };
