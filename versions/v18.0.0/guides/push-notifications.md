@@ -65,6 +65,10 @@ Push notifications have to come from somewhere, and that somewhere is your serve
 -   [exponent-server-sdk-python](https://github.com/exponent/exponent-server-sdk-python)
 -   [exponent-server-sdk-node](https://github.com/exponent/exponent-server-sdk-node)
 
+There are also some open source libraries that others have made that support other languages:
+-   [exponent-server-sdk-php](https://github.com/Alymosul/exponent-server-sdk-php)
+-   [exponent-server-sdk-golang](https://github.com/oliveroneill/exponent-server-sdk-golang)
+
 Check out the source if you would like to implement it in another language. For the sake of demonstration, let's look at our [simple-rails-push-server-example](https://github.com/exponent/simple-rails-push-server-example).
 
 ```javascript
