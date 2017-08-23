@@ -36,7 +36,7 @@ that integrates easily with React Native as well as with any other
 frontend technology of your choice. This means that you could reuse the
 code from your Expo app in your web app regardless of the framework. Apollo also integrates cleanly into popular development tools like Redux, and may be easily extended to fit your apps specific needs. Most important though is that Apollo Client is community driven with all development happening in the open.
 
-Using Apollo Client, you can benefit from _caching_, _optimistic UI_, _subscriptions_ and a lot more. To learn more, visit [dev.apollodata.com/react](dev.apollodata.com/react.).
+Using Apollo Client, you can benefit from _caching_, _optimistic UI_, _subscriptions_ and a lot more. To learn more, visit [dev.apollodata.com/react](http://dev.apollodata.com/react).
 
 
 ### Learn more
