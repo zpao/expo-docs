@@ -68,7 +68,15 @@ Push notifications have to come from somewhere, and that somewhere is your serve
 -   [exponent-server-sdk-ruby](https://github.com/exponent/exponent-server-sdk-ruby) for Ruby. Unmaintained.
 -   [ExpoNotificationsBundle](https://github.com/solvecrew/ExpoNotificationsBundle) for Symfony. Maintained by SolveCrew.
 
+<<<<<<< HEAD
+There are also some open source libraries that others have made that support other languages:
+-   [exponent-server-sdk-php](https://github.com/Alymosul/exponent-server-sdk-php)
+-   [exponent-server-sdk-golang](https://github.com/oliveroneill/exponent-server-sdk-golang)
+
+Check out the source if you would like to implement it in another language. For the sake of demonstration, let's look at our [simple-rails-push-server-example](https://github.com/exponent/simple-rails-push-server-example).
+=======
 Check out the source if you would like to implement it in another language.
+>>>>>>> Update push notif docs - fix grammar, link notif tool, remove Rails example (#2009)
 
 The [Expo push notification tool](https://expo.io/dashboard/notifications) is also useful for testing push notifications during development. It lets you easily send test notifications to your device.
 
