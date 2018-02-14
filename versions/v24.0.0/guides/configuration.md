@@ -94,7 +94,7 @@ The following is a list of properties that are available for you under the `"exp
 
 - `loading`
 
-   Configuration for the loading screen that users see when opening your app, while fetching & caching bundle and assets.
+   DEPREACTED: Use `splash` instead. Configuration for the loading screen that users see when opening your app, while fetching & caching bundle and assets.
 
    - `icon`
 
@@ -298,11 +298,11 @@ The following is a list of properties that are available for you under the `"exp
 
    - `permissions`
 
-      List of permissions used by the standalone app. Remove the field to use the default list of permissions.
+      List of additional permissions the standalone app will request upon installation, along with the minimum necessary for an expo app to function.  Remove the field to use the default list of permissions.  Set the field to an empty list to use only the minimum necessary permissions.
     
-    Example: `[ "CAMERA", "ACCESS_FINE_LOCATION" ]`.
+      Example: `[ "CAMERA", "ACCESS_FINE_LOCATION" ]`.
     
-    You can specify the following permissions depending on what you need:
+      You can specify the following permissions depending on what you need:
     
       - `ACCESS_COARSE_LOCATION`
       - `ACCESS_FINE_LOCATION`
@@ -449,4 +449,4 @@ The following is a list of properties that are available for you under the `"exp
       
 - `assetBundlePatterns`
 
-   
+   An array of file glob strings which point to assets that will be bundled within your standalone app binary. Read more in the [Offline Support guide](https://docs.expo.io/versions/latest/guides/offline-support.html)
