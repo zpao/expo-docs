@@ -52,6 +52,7 @@
     Building Standalone Apps: /versions/unversioned/guides/building-standalone-apps.html
     Deploying to App Stores: /versions/unversioned/guides/app-stores.html
     Release Channels: /versions/unversioned/guides/release-channels.html
+    Advanced Release Channels: /versions/unversioned/guides/advanced-release-channels.html
 - title: Tutorials
   index: /versions/unversioned/tutorials/index.html
   links:
@@ -79,6 +80,7 @@
     BlurView: /versions/unversioned/sdk/blur-view.html
     Branch: /versions/unversioned/sdk/branch.html
     Brightness: /versions/unversioned/sdk/brightness.html
+    Calendar: /versions/unversioned/sdk/calendar.html
     Camera: /versions/unversioned/sdk/camera.html
     Constants: /versions/unversioned/sdk/constants.html
     Contacts: /versions/unversioned/sdk/contacts.html
@@ -103,11 +105,13 @@
     Location: /versions/unversioned/sdk/location.html
     Lottie: /versions/unversioned/sdk/lottie.html
     Magnetometer: /versions/unversioned/sdk/magnetometer.html
+    MailComposer: /versions/unversioned/sdk/mail-composer.html
     MapView: /versions/unversioned/sdk/map-view.html
     Notifications: /versions/unversioned/sdk/notifications.html
     Payments: /versions/unversioned/sdk/payments.html
     Pedometer: /versions/unversioned/sdk/pedometer.html
     Permissions: /versions/unversioned/sdk/permissions.html
+    Print: /versions/unversioned/sdk/print.html
     registerRootComponent: /versions/unversioned/sdk/register-root-component.html
     ScreenOrientation: /versions/unversioned/sdk/screen-orientation.html
     SecureStore: /versions/unversioned/sdk/securestore.html

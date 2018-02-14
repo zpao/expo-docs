@@ -299,7 +299,7 @@ The following is a list of properties that are available for you under the `"exp
 
    - `permissions`
 
-      List of permissions used by the standalone app. Remove the field to use the default list of permissions.
+      List of additional permissions the standalone app will request upon installation, along with the minimum necessary for an expo app to function.  Remove the field to use the default list of permissions.  Set the field to an empty list to use only the minimum necessary permissions.
     
       Example: `[ "CAMERA", "ACCESS_FINE_LOCATION" ]`.
     
@@ -310,6 +310,8 @@ The following is a list of properties that are available for you under the `"exp
       - `CAMERA`
       - `MANAGE_DOCUMENTS`
       - `READ_CONTACTS`
+      - `READ_CALENDAR`
+      - `WRITE_CALENDAR`
       - `READ_EXTERNAL_STORAGE`
       - `READ_INTERNAL_STORAGE`
       - `READ_PHONE_STATE`
@@ -446,8 +448,27 @@ The following is a list of properties that are available for you under the `"exp
    Configuration for scripts to run to hook into the publish process
 
    - `postPublish`
+- `locales`
 
-      
+  (iOS system Dialogs only) Provide overrides by locale for System Dialog prompts like Permissions,
+  an example
+  ```
+  "locales": {
+    "ru": "./languages/russian.json"
+  }
+  ```
+  ...where `russian.json` looks like:
+  ```
+  {
+    "NSContactsUsageDescription": "Hello Russian words"
+  }
+  ```
+  Keys for the localization JSON are those found in InfoPlist, currently for `expo` this includes:
+  `NSCalendarsUsageDescription`, `NSCameraUsageDescription`, `NSContactsUsageDescription`, 
+  `NSLocationWhenInUseUsageDescription`, `NSMicrophoneUsageDescription`, `NSMotionUsageDescription`, 
+  `NSPhotoLibraryAddUsageDescription`, `NSPhotoLibraryUsageDescription`, and
+  `NSRemindersUsageDescription`.
+
 - `assetBundlePatterns`
 
    An array of file glob strings which point to assets that will be bundled within your standalone app binary. Read more in the [Offline Support guide](https://docs.expo.io/versions/latest/guides/offline-support.html)
