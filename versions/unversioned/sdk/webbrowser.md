@@ -26,12 +26,12 @@ Opens the url with Safari in a modal on iOS using `SFSafariViewController`, and 
 Returns a Promise:
 
 - If the user closed the web browser, the Promise resolves with `{ type: 'cancel' }`.
-- If the browser is closed using `Expo.WebBrowser.dismissBrowser()`, the Promise resolves with `{ type: 'dismissed' }`.
+- If the browser is closed using `Expo.WebBrowser.dismissBrowser()`, the Promise resolves with `{ type: 'dismiss' }`.
 
 ### `Expo.WebBrowser.openAuthSessionAsync(url, redirectUrl)`
 
 Opens the url with Safari in a modal on iOS using `SFAuthenticationSession`, and Chrome in a new [custom tab](https://developer.chrome.com/multidevice/android/customtabs) on Android. On iOS, the user will be asked whether to allow the app to authenticate using
-the given url. (****** what happens if they reject? ********)
+the given url.
 
 #### Arguments
 
@@ -42,7 +42,7 @@ Returns a Promise:
 
 - If the user does not permit the application to authenticate with the given url, the Promise resolved with `{ type: 'cancel' }`.
 - If the user closed the web browser, the Promise resolves with `{ type: 'cancel' }`.
-- If the browser is closed using `Expo.WebBrowser.dismissBrowser()`, the Promise resolves with `{ type: 'dismissed' }`.
+- If the browser is closed using `Expo.WebBrowser.dismissBrowser()`, the Promise resolves with `{ type: 'dismiss' }`.
 
 ### `Expo.WebBrowser.dismissBrowser()`
 
@@ -50,4 +50,4 @@ Dismisses the system's presented web browser.
 
 #### Returns
 
-The promise resolves with `{ type: 'dismissed' }`.
+The promise resolves with `{ type: 'dismiss' }`.
