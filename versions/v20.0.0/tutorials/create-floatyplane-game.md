@@ -7,7 +7,7 @@ In this tutorial we want to show you how easy it is to create a 2D mobile game w
 
 Demo (scan in Expo app): <a href="https://expo.io/@lele0108/floatyplane-gl">https://expo.io/@lele0108/floatyplane-gl</a>
 
-![](http://i.imgur.com/F1Xkzu1.png)
+<img src="http://i.imgur.com/F1Xkzu1.png" width="100px" />
 
 
 ### Prerequisites
@@ -28,7 +28,7 @@ Open the Expo XDE and click Project-->Open Project and navigate to the floatypla
 
 **Checkpoint: If you see a solid blue screen on your phone, everything is working!**
 
-![](http://i.imgur.com/y8FYDUP.png)
+<img src="http://i.imgur.com/y8FYDUP.png" width="200px"/>
 
 ### Three.js Basics
 Three is a Javascript library that makes it easy to create WebGL 3D graphics. There are three things needed to display graphics:
@@ -113,7 +113,7 @@ this.scene.add(this.planeMesh);
 
 **Checkpoint: Now you should see this on your screen.**
 
-![](http://i.imgur.com/BIcWSdy.png)
+<img src="http://i.imgur.com/BIcWSdy.png" width="200px"/>
 
 ### Moving The Airplane
 
@@ -155,7 +155,7 @@ startGame = () => {
 
 **Checkpoint: You're game should now be responsive to touch.**
 
-![](https://media.giphy.com/media/554szyzCGtZT2/giphy.gif)
+<img src="https://media.giphy.com/media/554szyzCGtZT2/giphy.gif" width="200px"/>
 
 ### Creating Pillars and Animations
 
@@ -240,7 +240,7 @@ this.animatingIds.forEach( id => {
 
 **Checkpoint: Game should generate pillars and detect collisions**
 
-![](https://media.giphy.com/media/kuJLpNfGs9QUE/giphy.gif)
+<img src="https://media.giphy.com/media/kuJLpNfGs9QUE/giphy.gif" width="200px"/>
 
 ### Pulling It Together
 
@@ -319,7 +319,7 @@ resetScene = () => {
 
 And we're done!
 
-![](https://media.giphy.com/media/ltkOM6tpRPNPa/giphy.gif)
+<img src="https://media.giphy.com/media/ltkOM6tpRPNPa/giphy.gif" width="200px"/>
 
 ### Conclusion
 
