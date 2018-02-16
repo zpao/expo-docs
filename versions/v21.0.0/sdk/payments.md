@@ -359,7 +359,7 @@ const params = {
   addressZip: '55555',
 }
 
-const token = await Payments.createTokenWithCardAsync(params)
+const token = await stripe.createTokenWithCardAsync(params)
 
 // Client specific code
 // api.sendTokenToBackend(token)
