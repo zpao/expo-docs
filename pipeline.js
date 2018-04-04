@@ -15,19 +15,23 @@ export default {
   steps: (branch, tag, pr) => {
     if (tag) {
       // all we need to do when there's a tag is deploy
-      return [
-        deploy(branch, tag, pr),
-        CI.waitStep(),
-        updateSearchIndex(branch, tag, pr),
-      ];
+      return [deploy(branch, tag, pr), CI.waitStep(), updateSearchIndex(branch, tag, pr)];
     }
-    const steps = [
-      build(branch, tag, pr),
-      CI.waitStep(),
-      deploy(branch, tag, pr),
-    ];
+    let steps = [build(branch, tag, pr)];
     if (!pr) {
-      steps.push(CI.blockStep(':shipit: Deploy to Production?'), tagRelease);
+      steps = [
+        ...steps,
+        CI.waitStep(),
+        deploy(branch, tag, pr),
+        CI.blockStep(':shipit: Deploy to Production?'),
+        tagRelease,
+      ];
+    } else {
+      steps = [
+        ...steps,
+        CI.blockStep(':shipit: Deploy to Dev Environment?'),
+        deploy(branch, tag, pr),
+      ];
     }
     return steps;
   },
@@ -107,7 +111,7 @@ const deploy = (branch, tag, pr) => ({
         await K8S.deployHelmChart({
           clusterName: 'exp-central',
           chartPath: './deploy/charts/docs',
-          namespace: environment,
+          namespace: 'docs',
           releaseName: `docs-${environment}`,
           values: {
             image: {
@@ -136,13 +140,9 @@ const updateSearchIndex = (branch, tag, pr) => ({
 
     Log.collapsed(':open_mouth: Updating search index...');
 
-    await spawnAsync(
-      'yarn',
-      ['run', 'update-search-index', '--', 'docs.expo.io'],
-      {
-        stdio: 'inherit',
-      }
-    );
+    await spawnAsync('yarn', ['run', 'update-search-index', '--', 'docs.expo.io'], {
+      stdio: 'inherit',
+    });
   },
 });
 
@@ -154,7 +154,7 @@ const tagRelease = {
     await git(`tag ${tag}`);
     Log.collapsed(':github: Pushing Release...');
     await git(`push origin ${tag}`); // upload more steps
-    global.currentPipeline.upload(global.currentPipeline.steps(tag, tag, null));
+    await global.currentPipeline.upload(await global.currentPipeline.steps(tag, tag, null));
   },
 };
 
@@ -163,9 +163,7 @@ function pad(n) {
 }
 
 async function makeVersionName() {
-  const hash = (await git(
-    `rev-parse --short=12 ${process.env.BUILDKITE_COMMIT}`
-  )).trim();
+  const hash = (await git(`rev-parse --short=12 ${process.env.BUILDKITE_COMMIT}`)).trim();
   const today = new Date();
   return `${today.getFullYear()}-${pad(today.getMonth() + 1)}-${pad(today.getDate())}-${hash}`;
 }
